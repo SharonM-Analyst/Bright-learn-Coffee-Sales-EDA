@@ -1,115 +1,170 @@
-
 # ☕ Bright Coffee Shop Sales Analysis
 
-## 📊 Case Study Overview
 
-This project analyzes historical transactional data from Bright Coffee Shop to support a newly appointed CEO in making data-driven decisions. 
-The dataset contains daily transaction records, including product details, pricing, quantity sold, store information, and timestamps.
+## Overview of the Case Study
 
-## Aim
+This project presents an end-to-end analysis of six months of transactional data from Bright Coffee Shop across three store locations.
+The objective is to support a newly appointed CEO by uncovering **data-driven insights** on sales performance, customer behavior, and product effectiveness to drive revenue growth and operational efficiency.
 
-The main goal is to increase revenue and improve product performance by uncovering actionable insights from sales data.
 
-## 🎯 Objectives
+## Project Objectives
 
-The analysis focuses on answering key business questions:
+The analysis aims to answer key business questions:
 
 * Which products generate the most revenue
-* What time of day the store performs best
-* Sales trends across products and time intervals
-* How to improve overall sales performance
+* When (time of day/week/month) sales peak
+* How customer spending behavior impacts revenue (AOV)
+* Which stores and product categories perform best
+* Where opportunities exist to improve sales performance
+
+---
+
+## ⚙️ **How the Case Study Was Conducted**
+
+### **1. Data Ingestion & Setup**
+
+* Imported raw CSV data into **Databricks (Lakehouse environment)**
+* Structured transactional dataset including:
+
+  * Date & time
+  * Product details
+  * Store information
+  * Quantity and pricing
+
+---
+
+### **2. Data Cleaning & Quality Checks**
+
+* Performed **null value validation**
+* Checked and handled **duplicate records**
+* Ensured **data consistency and correct data types**
+* Removed anomalies and inconsistencies
+
+---
+
+### **3. Feature Engineering**
+
+Created analytical features to enhance insights:
+
+* **Time-based features:**
+
+  * Day name, Month, Quarter
+  * Time buckets (Morning, Afternoon, Evening)
+  * Month patterns (Beginning, Mid, End)
+  * Seasonal grouping (SA weather)
+
+* **Business metrics:**
+
+  * Revenue (`transaction_qty × unit_price`)
+  * Average Order Value (AOV)
+  * Spending categories (Low, Medium, High)
+
+---
+
+### **4. Exploratory Data Analysis (EDA)**
+
+Used SQL to perform:
+
+* Revenue analysis by product, category, and store
+* Time-based trend analysis (daily, monthly, seasonal)
+* Customer spending behavior analysis (AOV segmentation)
+* Store performance comparison
+
+---
+
+### **5. Data Visualization & Reporting**
+
+* Built dashboards using:
+
+  * **Power BI**
+  * **Microsoft Excel**
+* Visualized:
+
+  * Revenue trends
+  * Peak sales periods
+  * Product performance
+  * Customer segments
+
+---
+
+## 🔍 **Key Insights**
+
+### 💰 **Spending Behavior Insights**
+
+* **Low-spend customers dominate total revenue**, contributing the highest overall sales value
+
+* However, they have a **low AOV**, indicating a high volume of small transactions
+
+* **High-spend segment shows very high AOV but extremely low volume**, suggesting:
+
+  * Customers are not purchasing premium-priced products frequently
+  * Possible **pricing inconsistencies or duplicate product offerings**
+
+* **Medium-spend segment contributes the least**, indicating:
+
+  * Weak product positioning
+  * Customers prefer either low-cost or premium options
+
+---
+
+### ⏰ **Time-Based Insights**
+
+* Sales peak during **morning hours**, indicating strong demand during rush periods
+* Evenings show **lower performance**, presenting opportunities for improvement
+
+---
+
+### 📈 **Sales Trends**
+
+* Revenue varies across **days and months**, showing clear patterns
+* Sales are influenced by **seasonality and customer behavior cycles**
+
+---
+
+### 🏪 **Store Performance**
+
+* Certain store locations outperform others
+* Suggests differences in **customer demand, location, or operations**
 
 
-## ⚙️ Methodology (How the Case Study Was Done)
+### ☕ **Product Performance**
 
-### 1. 📌 Planning & Data Architecture
-
-* Designed a data workflow diagram
-* Identified key metrics such as:
-  * Revenue (`unit_price × transaction_qty`)
-  * Sales by product and time
-  * Customer behaviour
-* Defined analysis approach and expected insights
+* A small number of products generate the majority of revenue (**Pareto principle**)
+* Some products underperform despite being similarly priced or positioned
 
 
-### 2. 🔄 Data Pre-Processing
+## Recommendations
 
-* Loaded CSV dataset into a structured environment
-* Perfomed Dataset Understanding using sql
-* Performed data cleaning:
+### Increase Average Order Value (AOV)
 
-  * Fixed data types (e.g., price formatting)
-  * Removed inconsistencies
-  * Removed anomalies
-* Created new features:
-
-  * Time buckets (hourly intervals) using Case statements
+* Introduce **bundles and upselling strategies**
+* Example: Coffee + pastry combo deals
 
 
-### 3. 🧮 Exploratory Data Analysis
-
-* Used SQL queries to:
-
-  * Aggregate revenue by product and category
-  * Analyze sales by time (hour, day, month)
-  * Compare store performance
-  * Explored trends and patterns in sales data
+### Optimize Pricing & Product Positioning
+* Standardize pricing for similar products
+* Clearly differentiate **premium vs standard products**
 
 
-### 4. 📊 Data Visualization
+### Improve Medium & Low-Performing Segments
 
-* Built dashboards and charts to present insights:
+* Repackage or promote underperforming products
+* Use discounts and bundles to increase demand
 
-  * Revenue by product
-  * Peak sales hours
-  * Sales trends over time
-  * Created clear visuals to support decision-making
 
-## 🔍 Key Insights
+### Optimize Operations
 
-### 💰 Revenue Insights
+* Increase staffing during **morning peak hours**
+* Introduce promotions during **low-demand periods (evenings)**
 
-* A small number of products generate the majority of revenue (Pareto principle)
-* High-performing products are critical for business growth
 
-### ⏰ Time-Based Insights
-
-* Sales peak during specific hours (morning rush)
-* Certain periods show significantly lower sales
-
-### 📈 Sales Trends
-
-* Sales vary across days and months, showing patterns and trends
-* Opportunities exist to improve consistency in revenue
-
-### 🏪 Store Performance
-
-* Some locations outperform others
-* Indicates potential differences in demand or operations
-
-## 💡 Recommendations
-
-### 📦 Inventory Optimization
+### Inventory Optimization
 
 * Increase stock for high-demand products
 * Reduce inventory for slow-moving items
 
-### 👥 Staffing Strategy
 
-* Allocate more staff during peak hours
-* Reduce staffing during slow periods
-
-### 📢 Marketing Improvements
-
-* Introduce promotions during low-sales periods
-* Bundle popular and underperforming products
-
-### 🚀 Growth Strategy
-
-* Focus on top-performing products
-* Use forecasting to anticipate demand
-
-## 🛠️ Tools Used
+## Tools Used
 
 ### Data Processing & Analysis
 
@@ -123,32 +178,10 @@ The analysis focuses on answering key business questions:
 
 ### Planning & Presentation
 
-* Drawio
+* Draw.io (Data flow diagrams)
 * Microsoft PowerPoint
 * Canva
 
-## 📌 Summary
-
-This project demonstrates how raw transactional data can be transformed into actionable business insights.
-
-By applying data cleaning, SQL analysis, and visualization techniques, the study identified:
-
-* Key revenue-driving products
-* Peak sales periods
-* Performance gaps across stores and time
-
-The final recommendations provide a clear path to:
-✔ Increase revenue
-✔ Improve operational efficiency
-✔ Enable data-driven decision-making
 
 
-## 🔮 Future Improvements
 
-* Build sales forecasting models
-* Implement real-time dashboards
-* Develop customer segmentation strategies
-* Automate reporting pipelines
-
-
-💡 *This project reflects real-world data analytics workflows and showcases the ability to turn data into strategic business decisions.*
