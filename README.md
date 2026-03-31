@@ -79,7 +79,10 @@ Used SQL to perform:
   * Product performance
   * Customer segments
   * Store Perfomance
-  * Monthly, Quarterly, weekly performance per store, product type, product category
+  * Monthly, Quarterly, weekly
+  * performance per store
+  * product type performance
+  * product category perfomance
 
 
 #### Key Insights
