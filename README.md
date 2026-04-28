@@ -71,6 +71,7 @@ Used SQL to perform:
 
 ### 5. Data Visualization & Reporting
   * Microsoft Excel Using Pivot Tables & Charts
+  * Data Studio: https://datastudio.google.com/reporting/03b5e04a-1a63-414b-ab86-7a6d1c5ddc5d
     
 * Visualized: 
 
