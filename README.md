@@ -6,7 +6,7 @@
 This project presents an end-to-end analysis of six months of transactional data from Bright Coffee Shop across three store locations.
 The objective is to support a newly appointed CEO by uncovering **data-driven insights** on sales performance, customer behavior, and product effectiveness to drive revenue growth and operational efficiency.
 
-
+![eda](https://github.com/SharonM-Analyst/Bright-learn-Coffee-Sales-EDA/blob/ebee7f7afc42ca2484b7e6163ee2ebb4a96e2c8b/1.Planning_Architecture/Planning-Data%20Flow.drawio.png)
 ### Project Objectives
 
 The analysis aims to answer key business questions:
